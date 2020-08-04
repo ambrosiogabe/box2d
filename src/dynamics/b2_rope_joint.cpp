@@ -75,8 +75,6 @@ void b2RopeJoint::InitVelocityConstraints(const b2SolverData& data)
 
 	m_length = m_u.Length();
 
-	float C = m_length - m_maxLength;
-
 	if (m_length > b2_linearSlop)
 	{
 		m_u *= 1.0f / m_length;
@@ -229,8 +227,8 @@ void b2RopeJoint::Dump()
 	b2Dump("  jd.bodyA = bodies[%d];\n", indexA);
 	b2Dump("  jd.bodyB = bodies[%d];\n", indexB);
 	b2Dump("  jd.collideConnected = bool(%d);\n", m_collideConnected);
-	b2Dump("  jd.localAnchorA.Set(%.15lef, %.15lef);\n", m_localAnchorA.x, m_localAnchorA.y);
-	b2Dump("  jd.localAnchorB.Set(%.15lef, %.15lef);\n", m_localAnchorB.x, m_localAnchorB.y);
-	b2Dump("  jd.maxLength = %.15lef;\n", m_maxLength);
+	b2Dump("  jd.localAnchorA.Set(%.9g, %.9g);\n", m_localAnchorA.x, m_localAnchorA.y);
+	b2Dump("  jd.localAnchorB.Set(%.9g, %.9g);\n", m_localAnchorB.x, m_localAnchorB.y);
+	b2Dump("  jd.maxLength = %.9g;\n", m_maxLength);
 	b2Dump("  joints[%d] = m_world->CreateJoint(&jd);\n", m_index);
 }

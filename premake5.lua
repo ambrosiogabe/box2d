@@ -25,4 +25,4 @@ project "Box2D"
         buildoptions "/MDd"        
 
     filter { "system:windows", "configurations:Release" }
-        buildoptions "MD"
+        buildoptions "/MD"
